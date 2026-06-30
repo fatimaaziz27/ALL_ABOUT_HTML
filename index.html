@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Build Your Database</title>
-
 <style>
 *{
     margin:0;
@@ -13,7 +12,7 @@
 }
 
 body{
-    background:linear-gradient(135deg,#090b1d,#111633,#1b1040);
+    background:#0B0B0B;
     font-family:Arial,Helvetica,sans-serif;
     overflow:hidden;
 }
@@ -22,9 +21,9 @@ body{
 .grid{
     position:fixed;
     inset:0;
-    background-image:radial-gradient(circle,#6a5cff 1.2px,transparent 1.2px);
+    background-image:radial-gradient(circle,#F5BE00 1.2px,transparent 1.2px);
     background-size:48px 48px;
-    opacity:.25;
+    opacity:.15;
 }
 
 /* SVG wires */
@@ -38,12 +37,12 @@ svg{
 
 path{
     fill:none;
-    stroke:#6ae6ff;
+    stroke:#F5BE00;
     stroke-width:3;
     stroke-linecap:round;
     filter:
-        drop-shadow(0 0 8px #6ae6ff)
-        drop-shadow(0 0 18px #8b5cf6);
+        drop-shadow(0 0 8px #F5BE00)
+        drop-shadow(0 0 18px rgba(245,190,0,.6));
 }
 
 /* Container */
@@ -61,15 +60,15 @@ path{
     justify-content:center;
     align-items:center;
 
-    background:rgba(30,22,70,.55);
-    border:2px solid rgba(125,103,255,.9);
+    background:#1B1B1B;
+    border:2px solid #F5BE00;
     border-radius:18px;
 
     backdrop-filter:blur(20px);
 
     box-shadow:
-        inset 0 0 40px rgba(140,110,255,.18),
-        0 0 25px rgba(106,230,255,.18);
+        inset 0 0 30px rgba(245,190,0,.08),
+        0 0 18px rgba(245,190,0,.45);
 
     cursor:grab;
     user-select:none;
@@ -84,12 +83,12 @@ path{
 .card:hover{
     transform:translateY(-4px);
 
-    border-color:#6ae6ff;
+    border-color:#FFD43B;
 
     box-shadow:
-        0 0 18px rgba(106,230,255,.5),
-        0 0 40px rgba(139,92,246,.35),
-        inset 0 0 50px rgba(106,230,255,.12);
+        0 0 12px rgba(245,190,0,.7),
+        0 0 28px rgba(245,190,0,.45),
+        inset 0 0 35px rgba(245,190,0,.12);
 }
 
 .card:active{
@@ -99,9 +98,7 @@ path{
 .card h1{
     color:white;
     font-size:72px;
-    text-shadow:
-        0 0 12px rgba(106,230,255,.35),
-        0 0 24px rgba(139,92,246,.25);
+    text-shadow:0 0 12px rgba(245,190,0,.35);
 }
 
 /* Positions */
@@ -133,11 +130,11 @@ path{
     height:22px;
     border-radius:50%;
     border:4px solid white;
-    background:#090b1d;
+    background:#0B0B0B;
 
     box-shadow:
-        0 0 12px #6ae6ff,
-        0 0 24px #8b5cf6;
+        0 0 12px #F5BE00,
+        0 0 24px rgba(245,190,0,.6);
 }
 
 .left{
@@ -264,27 +261,27 @@ document.querySelectorAll(".card").forEach(card=>{
 
 // ---------------- GLOW ----------------
 
-document.querySelectorAll(".card").forEach(card=>{
+document.querySelectorAll(".card").forEach(card => {
 
-    card.addEventListener("mousemove",e=>{
+    card.addEventListener("mousemove", e => {
 
-        const rect=card.getBoundingClientRect();
+        const rect = card.getBoundingClientRect();
 
-        const x=e.clientX-rect.left;
-        const y=e.clientY-rect.top;
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
 
-        card.style.background=`
+        card.style.background = `
         radial-gradient(circle at ${x}px ${y}px,
-        rgba(106,230,255,.40),
-        rgba(110,80,255,.35) 40%,
-        rgba(25,18,70,.75) 100%)
+        rgba(245,190,0,.35),
+        rgba(245,190,0,.18) 40%,
+        #1B1B1B 100%)
         `;
 
     });
 
-    card.addEventListener("mouseleave",()=>{
+    card.addEventListener("mouseleave", () => {
 
-        card.style.background="rgba(30,22,70,.55)";
+        card.style.background = "#1B1B1B";
 
     });
 
