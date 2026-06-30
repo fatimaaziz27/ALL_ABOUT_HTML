@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Build Your Database</title>
 
 <style>
@@ -13,7 +13,7 @@
 }
 
 body{
-    background:#020b22;
+    background:linear-gradient(135deg,#090b1d,#111633,#1b1040);
     font-family:Arial,Helvetica,sans-serif;
     overflow:hidden;
 }
@@ -22,9 +22,9 @@ body{
 .grid{
     position:fixed;
     inset:0;
-    background-image: radial-gradient(circle,#2476ff 1.2px,transparent 1.2px);
+    background-image:radial-gradient(circle,#6a5cff 1.2px,transparent 1.2px);
     background-size:48px 48px;
-    opacity:.55;
+    opacity:.25;
 }
 
 /* SVG wires */
@@ -38,10 +38,12 @@ svg{
 
 path{
     fill:none;
-    stroke:#2d7dff;
+    stroke:#6ae6ff;
     stroke-width:3;
     stroke-linecap:round;
-    filter:drop-shadow(0 0 8px #2d7dff);
+    filter:
+        drop-shadow(0 0 8px #6ae6ff)
+        drop-shadow(0 0 18px #8b5cf6);
 }
 
 /* Container */
@@ -59,20 +61,35 @@ path{
     justify-content:center;
     align-items:center;
 
-    background:rgba(16,45,110,.55);
-    border:2px solid #2d7dff;
+    background:rgba(30,22,70,.55);
+    border:2px solid rgba(125,103,255,.9);
     border-radius:18px;
 
     backdrop-filter:blur(20px);
 
     box-shadow:
-    inset 0 0 40px rgba(50,130,255,.15),
-    0 0 25px rgba(20,120,255,.15);
+        inset 0 0 40px rgba(140,110,255,.18),
+        0 0 25px rgba(106,230,255,.18);
 
     cursor:grab;
     user-select:none;
 
-    transition:background 0.2s;
+    transition:
+        transform .2s,
+        box-shadow .2s,
+        border-color .2s,
+        background .1s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+
+    border-color:#6ae6ff;
+
+    box-shadow:
+        0 0 18px rgba(106,230,255,.5),
+        0 0 40px rgba(139,92,246,.35),
+        inset 0 0 50px rgba(106,230,255,.12);
 }
 
 .card:active{
@@ -82,6 +99,9 @@ path{
 .card h1{
     color:white;
     font-size:72px;
+    text-shadow:
+        0 0 12px rgba(106,230,255,.35),
+        0 0 24px rgba(139,92,246,.25);
 }
 
 /* Positions */
@@ -106,19 +126,31 @@ path{
     left:700px;
 }
 
-/* dots */
+/* Connection dots */
 .dot{
     position:absolute;
     width:22px;
     height:22px;
     border-radius:50%;
     border:4px solid white;
-    background:#020b22;
-    box-shadow:0 0 18px #3a87ff;
+    background:#090b1d;
+
+    box-shadow:
+        0 0 12px #6ae6ff,
+        0 0 24px #8b5cf6;
 }
 
-.left{ left:-13px; top:50%; transform:translateY(-50%); }
-.right{ right:-13px; top:50%; transform:translateY(-50%); }
+.left{
+    left:-13px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.right{
+    right:-13px;
+    top:50%;
+    transform:translateY(-50%);
+}
 </style>
 </head>
 
@@ -153,89 +185,122 @@ path{
 
 <script>
 // ---------------- WIRES ----------------
-const wire1 = document.getElementById("wire1");
-const wire2 = document.getElementById("wire2");
 
-function point(el, side){
-    const r = el.getBoundingClientRect();
-    return side === "right"
-        ? { x: r.right, y: r.top + r.height/2 }
-        : { x: r.left, y: r.top + r.height/2 };
+const wire1=document.getElementById("wire1");
+const wire2=document.getElementById("wire2");
+
+function point(el,side){
+
+    const r=el.getBoundingClientRect();
+
+    return side==="right"
+    ?{x:r.right,y:r.top+r.height/2}
+    :{x:r.left,y:r.top+r.height/2};
+
 }
 
-function curve(start, end){
-    const offset = Math.abs(end.y - start.y) * 0.7;
+function curve(start,end){
+
+    const offset=Math.abs(end.y-start.y)*0.7;
 
     return `
-        M ${start.x} ${start.y}
-        C ${start.x + 120} ${start.y}
-        ${end.x - 120} ${end.y - offset}
-        ${end.x} ${end.y}
+    M ${start.x} ${start.y}
+    C ${start.x+120} ${start.y}
+    ${end.x-120} ${end.y-offset}
+    ${end.x} ${end.y}
     `;
 }
 
 function draw(){
-    const build = point(document.getElementById("build"), "right");
-    const your = document.getElementById("your");
 
-    const yourLeft = point(your, "left");
-    const yourRight = point(your, "right");
+    const build=point(document.getElementById("build"),"right");
 
-    const dbLeft = point(document.getElementById("database"), "left");
+    const your=document.getElementById("your");
 
-    wire1.setAttribute("d", curve(build, yourLeft));
-    wire2.setAttribute("d", curve(yourRight, dbLeft));
+    const yourLeft=point(your,"left");
+    const yourRight=point(your,"right");
+
+    const dbLeft=point(document.getElementById("database"),"left");
+
+    wire1.setAttribute("d",curve(build,yourLeft));
+    wire2.setAttribute("d",curve(yourRight,dbLeft));
+
 }
 
 draw();
-window.addEventListener("resize", draw);
+
+window.addEventListener("resize",draw);
 
 // ---------------- DRAG ----------------
-document.querySelectorAll(".card").forEach(card => {
 
-    let moving = false;
-    let dx = 0;
-    let dy = 0;
+document.querySelectorAll(".card").forEach(card=>{
 
-    card.addEventListener("mousedown", e => {
-        moving = true;
-        dx = e.clientX - card.offsetLeft;
-        dy = e.clientY - card.offsetTop;
+    let moving=false;
+    let dx=0;
+    let dy=0;
+
+    card.addEventListener("mousedown",e=>{
+
+        moving=true;
+        dx=e.clientX-card.offsetLeft;
+        dy=e.clientY-card.offsetTop;
+
     });
 
-    document.addEventListener("mousemove", e => {
+    document.addEventListener("mousemove",e=>{
+
         if(!moving) return;
 
-        card.style.left = (e.clientX - dx) + "px";
-        card.style.top = (e.clientY - dy) + "px";
+        card.style.left=(e.clientX-dx)+"px";
+        card.style.top=(e.clientY-dy)+"px";
 
         draw();
+
     });
 
-    document.addEventListener("mouseup", () => moving = false);
+    document.addEventListener("mouseup",()=>moving=false);
+
 });
 
-// ---------------- HOVER GLOW ----------------
-document.querySelectorAll(".card").forEach(card => {
+// ---------------- GLOW ----------------
 
-    card.addEventListener("mousemove", e => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+document.querySelectorAll(".card").forEach(card=>{
 
-        card.style.background =
-        `radial-gradient(circle at ${x}px ${y}px,
-        rgba(70,140,255,.45),
-        rgba(18,50,120,.55) 45%,
-        rgba(10,25,70,.75) 100%)`;
+    card.addEventListener("mousemove",e=>{
+
+        const rect=card.getBoundingClientRect();
+
+        const x=e.clientX-rect.left;
+        const y=e.clientY-rect.top;
+
+        card.style.background=`
+        radial-gradient(circle at ${x}px ${y}px,
+        rgba(106,230,255,.40),
+        rgba(110,80,255,.35) 40%,
+        rgba(25,18,70,.75) 100%)
+        `;
+
     });
 
-    card.addEventListener("mouseleave", () => {
-        card.style.background = "rgba(16,45,110,.55)";
+    card.addEventListener("mouseleave",()=>{
+
+        card.style.background="rgba(30,22,70,.55)";
+
     });
 
 });
 </script>
 
 </body>
-</html>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Build Your Database</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0B0B0B;font-family:Arial,sans-serif;overflow:hidden}.grid{position:fixed;inset:0;background-image:radial-gradient(circle,#FBBF24 1px,transparent 1px);background-size:48px 48px;opacity:.12}svg{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}path{fill:none;stroke:#FBBF24;stroke-width:3;filter:drop-shadow(0 0 8px #FBBF24)}.container{position:relative;width:1400px;height:900px;margin:auto}.card{position:absolute;display:flex;justify-content:center;align-items:center;background:#171717;border:2px solid #FBBF24;border-radius:18px;color:#fff;box-shadow:0 0 18px rgba(251,191,36,.2);cursor:grab;transition:.2s}.card:hover{transform:translateY(-3px);box-shadow:0 0 25px rgba(251,191,36,.4)}.card h1{font-size:72px}.build{width:420px;height:180px;top:140px;left:240px}.your{width:380px;height:180px;top:400px;left:520px}.database{width:620px;height:210px;top:650px;left:700px}.dot{position:absolute;width:22px;height:22px;border-radius:50%;border:4px solid #fff;background:#0B0B0B;box-shadow:0 0 12px #FBBF24}.left{left:-13px;top:50%;transform:translateY(-50%)}.right{right:-13px;top:50%;transform:translateY(-50%)}
+</style></head><body><div class="grid"></div><svg><path id="wire1"></path><path id="wire2"></path></svg><div class="container"><div class="card build" id="build"><div class="dot right"></div><h1>Build</h1></div><div class="card your" id="your"><div class="dot left"></div><div class="dot right"></div><h1>Your</h1></div><div class="card database" id="database"><div class="dot left"></div><h1>Database</h1></div></div>
+<script>
+const w1=wire1,w2=wire2;function p(e,s){let r=e.getBoundingClientRect();return s=="right"?{x:r.right,y:r.top+r.height/2}:{x:r.left,y:r.top+r.height/2}}function c(a,b){return`M ${a.x} ${a.y} C ${a.x+120} ${a.y} ${b.x-120} ${b.y} ${b.x} ${b.y}`}function draw(){w1.setAttribute("d",c(p(build,"right"),p(your,"left")));w2.setAttribute("d",c(p(your,"right"),p(database,"left")))}draw();addEventListener("resize",draw);document.querySelectorAll(".card").forEach(card=>{let m=false,dx=0,dy=0;card.onmousedown=e=>{m=true;dx=e.clientX-card.offsetLeft;dy=e.clientY-card.offsetTop};document.onmousemove=e=>{if(!m)return;card.style.left=e.clientX-dx+"px";card.style.top=e.clientY-dy+"px";draw();let r=card.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;card.style.background=`radial-gradient(circle at ${x}px ${y}px,rgba(251,191,36,.25),#171717 60%)`};document.onmouseup=()=>m=false;card.onmouseleave=()=>card.style.background="#171717";});
+</script></body></html>
