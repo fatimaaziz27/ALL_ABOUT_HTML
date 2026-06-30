@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -292,15 +292,4 @@ document.querySelectorAll(".card").forEach(card=>{
 </script>
 
 </body>
-</html> -->
-
-
-
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Build Your Database</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}body{background:#0B0B0B;font-family:Arial,sans-serif;overflow:hidden}.grid{position:fixed;inset:0;background-image:radial-gradient(circle,#FBBF24 1px,transparent 1px);background-size:48px 48px;opacity:.12}svg{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}path{fill:none;stroke:#FBBF24;stroke-width:3;filter:drop-shadow(0 0 8px #FBBF24)}.container{position:relative;width:1400px;height:900px;margin:auto}.card{position:absolute;display:flex;justify-content:center;align-items:center;background:#171717;border:2px solid #FBBF24;border-radius:18px;color:#fff;box-shadow:0 0 18px rgba(251,191,36,.2);cursor:grab;transition:.2s}.card:hover{transform:translateY(-3px);box-shadow:0 0 25px rgba(251,191,36,.4)}.card h1{font-size:72px}.build{width:420px;height:180px;top:140px;left:240px}.your{width:380px;height:180px;top:400px;left:520px}.database{width:620px;height:210px;top:650px;left:700px}.dot{position:absolute;width:22px;height:22px;border-radius:50%;border:4px solid #fff;background:#0B0B0B;box-shadow:0 0 12px #FBBF24}.left{left:-13px;top:50%;transform:translateY(-50%)}.right{right:-13px;top:50%;transform:translateY(-50%)}
-</style></head><body><div class="grid"></div><svg><path id="wire1"></path><path id="wire2"></path></svg><div class="container"><div class="card build" id="build"><div class="dot right"></div><h1>Build</h1></div><div class="card your" id="your"><div class="dot left"></div><div class="dot right"></div><h1>Your</h1></div><div class="card database" id="database"><div class="dot left"></div><h1>Database</h1></div></div>
-<script>
-const w1=wire1,w2=wire2;function p(e,s){let r=e.getBoundingClientRect();return s=="right"?{x:r.right,y:r.top+r.height/2}:{x:r.left,y:r.top+r.height/2}}function c(a,b){return`M ${a.x} ${a.y} C ${a.x+120} ${a.y} ${b.x-120} ${b.y} ${b.x} ${b.y}`}function draw(){w1.setAttribute("d",c(p(build,"right"),p(your,"left")));w2.setAttribute("d",c(p(your,"right"),p(database,"left")))}draw();addEventListener("resize",draw);document.querySelectorAll(".card").forEach(card=>{let m=false,dx=0,dy=0;card.onmousedown=e=>{m=true;dx=e.clientX-card.offsetLeft;dy=e.clientY-card.offsetTop};document.onmousemove=e=>{if(!m)return;card.style.left=e.clientX-dx+"px";card.style.top=e.clientY-dy+"px";draw();let r=card.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;card.style.background=`radial-gradient(circle at ${x}px ${y}px,rgba(251,191,36,.25),#171717 60%)`};document.onmouseup=()=>m=false;card.onmouseleave=()=>card.style.background="#171717";});
-</script></body></html>
+</html>
