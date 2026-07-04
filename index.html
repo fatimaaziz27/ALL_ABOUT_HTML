@@ -1,1 +1,122 @@
+<!DOCTYPE html>
+<html>
+<body>
+<!-- HTML Links - Syntax
+The HTML <a> tag defines a hyperlink. It has the following syntax: -->
+<!-- <a href="url">link text</a> -->
+<!-- Example -->
+<a href="https://www.w3schools.com/">Visit W3Schools.com!</a>
+
+<!-- HTML Links - The target Attribute
+The target attribute can have one of the following values:
+_self - Default. Opens the document in the same window/tab as it was clicked
+_blank - Opens the document in a new window or tab
+_parent - Opens the document in the parent frame
+_top - Opens the document in the full body of the window
+Example -->
+<a href="https://www.w3schools.com/" target="_blank">Visit W3Schools!</a>
+
+<!-- Absolute URLs vs. Relative URLs
+Example -->
+<h2>Absolute URLs</h2>
+<p><a href="https://www.w3.org/">W3C</a></p>
+<p><a href="https://www.google.com/">Google</a></p>
+<h2>Relative URLs</h2>
+<p><a href="html_images.asp">HTML Images</a></p>
+<p><a href="/css/default.asp">CSS Tutorial</a></p>
+
+<!-- HTML Links - Use an Image as a Link
+Example -->
+<a href="default.asp">
+<img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;">
+</a>
+
+<!-- Link to an Email Address
+Example -->
+<a href="mailto:someone@example.com">Send email</a>
+
+<!-- Button as a Link
+Example -->
+<button onclick="document.location='default.asp'">HTML Tutorial</button>
+
+<!-- Link Titles
+Example -->
+<a href="https://www.w3schools.com/html/" title="Go to W3Schools HTML section">Visit our HTML Tutorial</a>
+
+<!-- More on Absolute URLs and Relative URLs
+Example -->
+<!-- Use a full URL to link to a web page:  -->
+<a href="https://www.w3schools.com/html/default.asp">HTML tutorial</a>
+<!-- Example
+Link to a page located in the html folder on the current web site:  -->
+<a href="/html/default.asp">HTML tutorial</a>
+<!-- Example
+Link to a page located in the same folder as the current page:  -->
+<a href="default.asp">HTML tutorial</a>
+
+<!-- HTML Link Colors
+Example
+Here, an unvisited link will be green with no underline. A visited link will be pink with no underline. An active link will be yellow and underlined. In addition, when mousing over a link (a:hover) it will become red and underlined: -->
+<style>
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+</style>
+
+<!-- Link Buttons
+Example -->
+<style>
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+</style>
+
+<!-- HTML Links - Create Bookmarks
+When the link is clicked, the page will scroll down or up to the location with the bookmark.
+Example -->
+<h2 id="C4">Chapter 4</h2>
+<!-- Then, add a link to the bookmark ("Jump to Chapter 4"), from within the same page: -->
+
+<!-- Example -->
+<a href="#C4">Jump to Chapter 4</a>
+<!-- You can also add a link to a bookmark on another page: -->
+<a href="html_demo.html#C4">Jump to Chapter 4</a>
+
+<!-- Summary
+Use the id attribute (id="value") to define bookmarks in a page
+Use the href attribute (href="#value") to link to the bookmark -->
+
+</body>
+</html>
+
+
 
