@@ -307,27 +307,7 @@ table {
 
 
 
-HTML Table Colspan & Rowspan
-HTML tables can have cells that span over multiple rows and/or columns.
-
-NAME	 
- 	 	 
- 	 	 
- 	 	 
- 	 	 
-APRIL	 	 
- 	 
- 	 
- 	 	 
- 	 	 
-2022
- 	 	 
-FIESTA	 
- 
- 	 	 
 HTML Table - Colspan
-To make a cell span over multiple columns, use the colspan attribute:
-
 Example
 <table>
   <tr>
@@ -345,11 +325,8 @@ Example
     <td>57</td>
   </tr>
 </table>
-Note: The value of the colspan attribute represents the number of columns to span.
-
+  
 HTML Table - Rowspan
-To make a cell span over multiple rows, use the rowspan attribute:
-
 Example
 <table>
   <tr>
@@ -365,68 +342,22 @@ Example
 </tr>
 </table>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  HTML Table Styling
-Use CSS to make your tables look better.
-
+  
+  
+HTML Table Styling
 HTML Table - Zebra Stripes
-If you add a background color on every other table row, you will get a nice zebra stripes effect.
-
-1	2	3	4
-5	6	7	8
-9	10	11	12
-13	14	15	16
-17	18	19	20
-To style every other table row element, use the :nth-child(even) selector like this:
-
 Example
 tr:nth-child(even) {
   background-color: #D6EEEE;
 }
-Note: If you use (odd) instead of (even), the styling will occur on row 1,3,5 etc. instead of 2,4,6 etc.
-
+  
 HTML Table - Vertical Zebra Stripes
-To make vertical zebra stripes, style every other column, instead of every other row.
-
-1	2	3	4
-5	6	7	8
-9	10	11	12
-13	14	15	16
-17	18	19	20
-Set the :nth-child(even) for table data elements like this:
-
 Example
 td:nth-child(even), th:nth-child(even) {
   background-color: #D6EEEE;
 }
-Note: Put the :nth-child() selector on both th and td elements if you want to have the styling on both headers and regular table cells.
-
-REMOVE ADS
 
 Combine Vertical and Horizontal Zebra Stripes
-You can combine the styling from the two examples above and you will have stripes on every other row and every other column.
-
-If you use a transparent color you will get an overlapping effect.
-
- 	 	 	 	 	 	 	 	 
- 	 	 	 	 	 	 	 	 
- 	 	 	 	 	 	 	 	 
- 	 	 	 	 	 	 	 	 
- 	 	 	 	 	 	 	 	 
-Use an rgba() color to specify the transparency of the color:
-
 Example
 tr:nth-child(even) {
   background-color: rgba(150, 212, 212, 0.4);
@@ -435,31 +366,19 @@ tr:nth-child(even) {
 th:nth-child(even),td:nth-child(even) {
   background-color: rgba(150, 212, 212, 0.4);
 }
+
 Horizontal Dividers
-First Name	Last Name	Savings
-Peter	Griffin	$100
-Lois	Griffin	$150
-Joe	Swanson	$300
-If you specify borders only at the bottom of each table row, you will have a table with horizontal dividers.
-
-Add the border-bottom property to all tr elements to get horizontal dividers:
-
 Example
 tr {
   border-bottom: 1px solid #ddd;
 }
-REMOVE ADS
 
 Hoverable Table
 Use the :hover selector on tr to highlight table rows on mouse over:
-
-First Name	Last Name	Savings
-Peter	Griffin	$100
-Lois	Griffin	$150
-Joe	Swanson	$300
 Example
 tr:hover {background-color: #D6EEEE;}
 
+  
 
 
 
@@ -478,6 +397,14 @@ tr:hover {background-color: #D6EEEE;}
 
 
 
+
+
+
+
+
+
+
+  
 HTML Table Colgroup
 The <colgroup> element is used to style specific columns of a table.
 
