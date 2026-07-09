@@ -51,13 +51,13 @@ tr stands for table row. -->
     <td>10</td>
   </tr>
 </table>
-
+<!-- 
 Table Headers
 Sometimes you want your cells to be table header cells. In those cases use the <th> tag instead of the <td> tag:
-th stands for table header.
+th stands for table header. -->
 
-Example
-Let the first row be table header cells:
+<!-- Example
+Let the first row be table header cells: -->
 
 <table>
   <tr>
@@ -79,27 +79,24 @@ Let the first row be table header cells:
 
 
   
-HTML Table Borders
-To add a border, use the CSS border property on table, th, and td elements:
- 	 	 
-Example
+<!-- HTML Table Borders
+To add a border, use the CSS border property on table, th, and td elements: --> 	 	 
+<!-- Example -->
 table, th, td {
   border: 1px solid black;
 }
 
-Collapsed Table Borders
-This will make the borders collapse into a single border:
-
-Example
+<!-- Collapsed Table Borders
+This will make the borders collapse into a single border: -->
+<!-- Example -->
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
 
-Style Table Borders
-If you set a background color of each cell, and give the border a white color (the same as the document background), you get the impression of an invisible border:
-
-Example
+<!-- Style Table Borders
+If you set a background color of each cell, and give the border a white color (the same as the document background), you get the impression of an invisible border: -->
+<!-- Example -->
 table, th, td {
   border: 1px solid white;
   border-collapse: collapse;
@@ -108,39 +105,38 @@ th, td {
   background-color: #96D4D4;
 }
 
-Round Table Borders
+<!-- Round Table Borders
 With the border-radius property, the borders get rounded corners:
-Example
-
+Example -->
   table, th, td {
   border: 1px solid black;
   border-radius: 10px;
 }
  	 	 
-Example
+<!-- Example -->
 th, td {
   border: 1px solid black;
   border-radius: 10px;
 }
 
-Dotted Table Borders
-Example
+<!-- Dotted Table Borders
+Example -->
  th, td {
   border-style: dotted;
 }
   
-Border Color
-Example
+<!-- Border Color
+Example -->
  th, td {
   border-color: #96D4D4;
 }
 
 
 
-HTML Table Sizes
+<!-- HTML Table Sizes
 HTML Table Width
 To set the width of a table, add the style attribute to the <table> element:
-Example
+Example -->
 
 <table style="width:100%">
   <tr>
@@ -160,10 +156,10 @@ Example
   </tr>
 </table>
 
-HTML Table Column Width
+<!-- HTML Table Column Width
 To set the size of a specific column, add the style attribute on a <th> or <td> element:
 Example
-Set the width of the first column to 70%:
+Set the width of the first column to 70%: -->
 
 <table style="width:100%">
   <tr>
@@ -183,10 +179,10 @@ Set the width of the first column to 70%:
   </tr>
 </table>
 
-HTML Table Row Height
+<!-- HTML Table Row Height
 To set the height of a specific row, add the style attribute on a table row element:
 Example
-Set the height of the second row to 200 pixels:
+Set the height of the second row to 200 pixels: -->
 
 <table style="width:100%">
   <tr>
@@ -208,9 +204,9 @@ Set the height of the second row to 200 pixels:
 
   
  	 	 
-HTML Table Headers
+<!-- HTML Table Headers
 Table headers are defined with th elements. Each th element represents a table cell.
-Example
+Example -->
 <table>
   <tr>
     <th>Firstname</th>
@@ -229,9 +225,9 @@ Example
   </tr>
 </table>
   
-Vertical Table Headers
+<!-- Vertical Table Headers
 To use the first column as table headers, define the first cell in each row as a <th> element:
-Example
+Example -->
 <table>
   <tr>
     <th>Firstname</th>
@@ -250,17 +246,16 @@ Example
   </tr>
 </table>
 
-Align Table Headers
-Example
+<!-- Align Table Headers
+Example -->
 th {
   text-align: left;
 }
   
-Header for Multiple Columns
+<!-- Header for Multiple Columns
 You can have a header that spans over two or more columns.
-To do this, use the colspan attribute on the <th> element:
-
-Example
+To do this, use the colspan attribute on the <th> element: -->
+<!-- Example -->
 <table>
   <tr>
     <th colspan="2">Name</th>
@@ -280,17 +275,17 @@ Example
 
 
   
-HTML Table Padding & Spacing
+<!-- HTML Table Padding & Spacing
 HTML tables can adjust the padding inside the cells, and also the space between the cells.
 Cell padding is the space between the cell edges and the cell content.
-Example
+Example -->
 th, td {
   padding: 15px;
 }
 
-To add padding only above the content, use the padding-top property.
+<!-- To add padding only above the content, use the padding-top property.
 Add padding to the other sides with the padding-bottom, padding-left, and padding-right properties:
-Example
+Example -->
 th, td {
   padding-top: 10px;
   padding-bottom: 20px;
@@ -298,17 +293,17 @@ th, td {
   padding-right: 40px;
 }
   
-HTML Table - Cell Spacing
+<!-- HTML Table - Cell Spacing
 Cell spacing is the space between each cell.
-Example
+Example -->
 table {
   border-spacing: 30px;
 }
 
 
 
-HTML Table - Colspan
-Example
+<!-- HTML Table - Colspan
+Example -->
 <table>
   <tr>
     <th colspan="2">Name</th>
@@ -326,8 +321,8 @@ Example
   </tr>
 </table>
   
-HTML Table - Rowspan
-Example
+<!-- HTML Table - Rowspan
+Example -->
 <table>
   <tr>
     <th>Name</th>
@@ -344,21 +339,21 @@ Example
 
   
   
-HTML Table Styling
+<!-- HTML Table Styling
 HTML Table - Zebra Stripes
-Example
+Example -->
 tr:nth-child(even) {
   background-color: #D6EEEE;
 }
   
-HTML Table - Vertical Zebra Stripes
-Example
+<!-- HTML Table - Vertical Zebra Stripes
+Example -->
 td:nth-child(even), th:nth-child(even) {
   background-color: #D6EEEE;
 }
 
-Combine Vertical and Horizontal Zebra Stripes
-Example
+<!-- Combine Vertical and Horizontal Zebra Stripes
+Example -->
 tr:nth-child(even) {
   background-color: rgba(150, 212, 212, 0.4);
 }
@@ -367,15 +362,15 @@ th:nth-child(even),td:nth-child(even) {
   background-color: rgba(150, 212, 212, 0.4);
 }
 
-Horizontal Dividers
-Example
+<!-- Horizontal Dividers
+Example -->
 tr {
   border-bottom: 1px solid #ddd;
 }
 
-Hoverable Table
+<!-- Hoverable Table
 Use the :hover selector on tr to highlight table rows on mouse over:
-Example
+Example -->
 tr:hover {background-color: #D6EEEE;}
 
   
