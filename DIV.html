@@ -34,55 +34,12 @@ Example -->
   <p>Rome is the capital city of Italy.</p>
   <p>Rome has over 4 million inhabitants.</p>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
 Aligning <div> elements side by side
-When building web pages, you often want to have two or more <div> elements side by side, like this:
-
-London
-London is the capital city of England.
-
-London has over 9 million inhabitants.
-
-Oslo
-Oslo is the capital city of Norway.
-
-Oslo has over 700,000 inhabitants.
-
-Rome
-Rome is the capital city of Italy.
-
-Rome has over 4 million inhabitants.
-
-There are different methods for aligning elements side by side, all include some CSS styling. We will look at the most common methods:
+There are different methods for aligning elements side by side, the most common methods:
 
 Float
-The CSS float property was not originally meant to align <div> elements side-by-side, but has been used for this purpose for many years.
-
-The CSS float property is used for positioning and formatting content and allows elements to be positioned horizontally, rather than vertically.
-
 Example
-How to use float to align div elements side by side:
-
 <style>
 .mycontainer {
   width:100%;
@@ -93,64 +50,18 @@ How to use float to align div elements side by side:
   float:left;
 }
 </style>
-Result
-London
-London is the capital city of England.
-
-London has over 9 million inhabitants.
-
-Oslo
-Oslo is the capital city of Norway.
-
-Oslo has over 700,000 inhabitants.
-
-Rome
-Rome is the capital city of Italy.
-
-Rome has over 4 million inhabitants.
-
-
-Learn more about float in our CSS float tutorial.
 
 Inline-block
-If you change the <div> element's display property from block to inline-block, the <div> elements will no longer add a line break before and after, and will be displayed side by side instead of on top of each other.
-
 Example
-How to use display: inline-block to align div elements side by side:
-
 <style>
 div {
   width: 30%;
   display: inline-block;
 }
 </style>
-Result
-London
-London is the capital city of England.
-
-London has over 9 million inhabitants.
-
- 
-Oslo
-Oslo is the capital city of Norway.
-
-Oslo has over 700,000 inhabitants.
-
- 
-Rome
-Rome is the capital city of Italy.
-
-Rome has over 4 million inhabitants.
-
-
+  
 Flex
-The CSS Flexbox Layout Module was introduced to make it easier to design flexible responsive layout structure without using float or positioning.
-
-To make the CSS flex method work, surround the <div> elements with another <div> element and give it the status as a flex container.
-
 Example
-How to use flex to align div elements side by side:
-
 <style>
 .mycontainer {
   display: flex;
@@ -159,24 +70,6 @@ How to use flex to align div elements side by side:
   width:33%;
 }
 </style>
-Result
-London
-London is the capital city of England.
-
-London has over 9 million inhabitants.
-
-Oslo
-Oslo is the capital city of Norway.
-
-Oslo has over 700,000 inhabitants.
-
-Rome
-Rome is the capital city of Italy.
-
-Rome has over 4 million inhabitants.
-
-
-Learn more about flex in our CSS flexbox tutorial.
 
 Grid
 The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning.
