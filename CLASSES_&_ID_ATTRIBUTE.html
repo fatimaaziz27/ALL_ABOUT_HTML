@@ -109,13 +109,13 @@ function myFunction() {
 
 
 
-HTML id Attribute
+<!-- HTML id Attribute
 The id attribute specifies a unique id for an HTML element.
 The value of the id attribute must be unique within the HTML document.
 The id attribute is used to point to a specific style declaration in a style sheet.
 It is also used by JavaScript to access and manipulate the element with the specific id.
 The syntax for id is: write a hash character (#), followed by an id name.
-Example
+Example -->
 
 <!DOCTYPE html>
 <html>
@@ -136,9 +136,10 @@ Example
 </body>
 </html>
 
-Difference Between Class and ID
+<!-- Difference Between Class and ID
 A class name can be used by multiple HTML elements, while an id name must only be used by one HTML element within the page:
-Example
+Example -->
+
 <style>
 /* Style the element with the id "myHeader" */
 #myHeader {
@@ -169,22 +170,23 @@ Example
 <h2 class="city">Tokyo</h2>
 <p>Tokyo is the capital of Japan.</p>
 
-HTML Bookmarks with ID and Links
+<!-- HTML Bookmarks with ID and Links
 Example
-First, create a bookmark with the id attribute:
+First, create a bookmark with the id attribute: -->
 
 <h2 id="C4">Chapter 4</h2>
-Then, add a link to the bookmark ("Jump to Chapter 4"), from within the same page:
+<!-- Then, add a link to the bookmark ("Jump to Chapter 4"), from within the same page: -->
 
-Example
+<!-- Example -->
 <a href="#C4">Jump to Chapter 4</a>
-Or, add a link to the bookmark ("Jump to Chapter 4"), from another page:
+<!-- Or, add a link to the bookmark ("Jump to Chapter 4"), from another page: -->
 
 <a href="html_demo.html#C4">Jump to Chapter 4</a>
 
-id Attribute in JavaScript
+<!-- id Attribute in JavaScript
 JavaScript can access an element with a specific id with the getElementById() method:
-Example
+Example -->
+
 <script>
 function displayResult() {
   document.getElementById("myHeader").innerHTML = "Have a nice day!";
