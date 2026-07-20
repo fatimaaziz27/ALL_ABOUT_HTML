@@ -1,4 +1,4 @@
-# 🌐 ALL_ABOUT_HTML
+#  ALL_ABOUT_HTML
 
 A collection of HTML programs covering the fundamentals of web development, semantic elements, forms, tables, multimedia, and practice exercises. This repository was created to strengthen HTML skills through hands-on coding and real-world examples.
 
@@ -22,14 +22,12 @@ A collection of HTML programs covering the fundamentals of web development, sema
 - Tables
 - Forms
 - Buttons
-- Audio & Video
 - Iframes
 
 ### Semantic HTML
 
 - Header
 - Navigation
-- Main
 - Section
 - Article
 - Aside
@@ -38,8 +36,6 @@ A collection of HTML programs covering the fundamentals of web development, sema
 ### Advanced HTML
 
 - Semantic Elements
-- HTML Entities
-- Meta Tags
 - Favicons
 - Responsive Images
 - Accessibility Basics
@@ -73,8 +69,4 @@ This repository serves as my HTML learning journey, where I practice web develop
 ## Future Improvements
 
 - Build complete responsive web pages
-- Learn CSS for styling
-- Learn JavaScript for interactivity
-- Improve accessibility (ARIA)
-- Create portfolio and landing pages
 - Build real-world HTML projects
