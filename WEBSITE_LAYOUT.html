@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minimal Portfolio</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f6f8fa;
+    color:#24292f;
+    line-height:1.7;
+}
+
+/* Header */
+
+header{
+    background:#ffffff;
+    padding:80px 20px;
+    text-align:center;
+    border-bottom:1px solid #d0d7de;
+}
+
+header h1{
+    font-size:48px;
+    color:#1a7f37;
+    margin-bottom:10px;
+}
+
+header p{
+    color:#57606a;
+    font-size:18px;
+}
+
+/* Navigation */
+
+.navbar{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    background:#ffffff;
+    padding:18px;
+    border-bottom:1px solid #d0d7de;
+}
+
+.navbar a{
+    text-decoration:none;
+    color:#57606a;
+    font-weight:600;
+    transition:.3s;
+}
+
+.navbar a:hover{
+    color:#2da44e;
+}
+
+/* Layout */
+
+.container{
+    max-width:1200px;
+    margin:50px auto;
+    display:flex;
+    gap:30px;
+    padding:0 20px;
+}
+
+/* Sidebar */
+
+.side{
+    flex:1;
+    background:#ffffff;
+    padding:25px;
+    border:1px solid #d0d7de;
+    border-radius:16px;
+    box-shadow:0 8px 20px rgba(0,0,0,.04);
+}
+
+.side h2,
+.side h3{
+    color:#1a7f37;
+    margin-bottom:15px;
+}
+
+.side p{
+    color:#57606a;
+}
+
+/* Main */
+
+.main{
+    flex:2;
+    background:#ffffff;
+    padding:30px;
+    border:1px solid #d0d7de;
+    border-radius:16px;
+    box-shadow:0 8px 20px rgba(0,0,0,.04);
+}
+
+.article{
+    margin-bottom:50px;
+}
+
+.article h2{
+    color:#1a7f37;
+}
+
+.article h5{
+    color:#8c959f;
+    margin:10px 0 20px;
+    font-weight:normal;
+}
+
+.article p{
+    color:#57606a;
+}
+
+/* Placeholder Images */
+
+.fakeimg{
+    width:100%;
+    border-radius:12px;
+    background:#ddf4e4;
+    color:#1a7f37;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:20px 0;
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* Skill Boxes */
+
+.skill{
+    background:#ddf4e4;
+    color:#1a7f37;
+    padding:14px;
+    border-radius:10px;
+    margin-top:12px;
+    text-align:center;
+    font-weight:bold;
+}
+
+/* Footer */
+
+footer{
+    margin-top:50px;
+    background:#ffffff;
+    border-top:1px solid #d0d7de;
+    text-align:center;
+    padding:35px;
+    color:#57606a;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.container{
+    flex-direction:column;
+}
+
+.navbar{
+    flex-direction:column;
+    gap:15px;
+}
+
+header h1{
+    font-size:36px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>My Portfolio</h1>
+    <p>Minimal • Clean • Responsive</p>
+</header>
+
+<nav class="navbar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Projects</a>
+    <a href="#">Contact</a>
+</nav>
+
+<div class="container">
+
+    <aside class="side">
+
+        <h2>About Me</h2>
+
+        <div class="fakeimg" style="height:220px;">
+            Profile Image
+        </div>
+
+        <p>
+            Hello! I'm a passionate developer learning Full Stack Development.
+            I enjoy building modern, responsive websites and continuously
+            improving my programming skills.
+        </p>
+
+        <br>
+
+        <h3>Skills</h3>
+
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Java</div>
+        <div class="skill">Python</div>
+
+    </aside>
+
+    <main class="main">
+
+        <section class="article">
+
+            <h2>Responsive Website</h2>
+
+            <h5>July 2026</h5>
+
+            <div class="fakeimg" style="height:220px;">
+                Project Screenshot
+            </div>
+
+            <p>
+                A responsive website built with HTML and CSS using Flexbox,
+                modern layouts, and clean design principles.
+            </p>
+
+        </section>
+
+        <section class="article">
+
+            <h2>Developer Portfolio</h2>
+
+            <h5>June 2026</h5>
+
+            <div class="fakeimg" style="height:220px;">
+                Portfolio Preview
+            </div>
+
+            <p>
+                A modern personal portfolio showcasing projects, technical
+                skills, and my journey toward becoming a Full Stack Developer.
+            </p>
+
+        </section>
+
+    </main>
+
+</div>
+
+<footer>
+    <p>© 2026 Fatima Aziz | Built with HTML & CSS</p>
+</footer>
+
+</body>
+</html>
